@@ -10,8 +10,7 @@ Ausgangslage bildet das in Übung 1 (siehe http://htl.boxtree.at/lehre/wp-conten
 - E-Mail
 
 Eine mögliche Darstellung im Frontend:
-![](./imgs/menueeintrag-settings.png)
-![](./imgs/event-registration-frontend-form.png)
+![](./imgs/event-registration-frontend-form.PNG)
 
 > Selbstverständlich kann diese an das eigene Look & Feel in UE1 angepasst werden. Achten Sie jedoch auf eine ansprechende Umsetzung, die einer Medientechnikern/eines Medientechnikers würdig ist!
 
@@ -69,7 +68,7 @@ function registration_form() {
 
 **>> Task 1**: Im ersten Schritt gilt es die getätigten Eingaben auf einfache Art und Weise auszugeben. Verwenden Sie hierbei die Funktion `sanitize_text_field` bei der Ausgabe. Ein mögliches Ergebnis zeigt nachfolgender Screenshot:  
 
-![](./imgs/event-registration-frontend-output.png)
+![](./imgs/event-registration-frontend-output.PNG)
 
 
 ## WordPress Database Class
@@ -131,6 +130,6 @@ Weiterführende Details liefert diese Quelle: https://codex.wordpress.org/Creati
 
 **>>Task 3:** Den vorläufig letzten Schritt stellt die Ausgabe der Anmeldung im Backend dar. Erweitern Sie das Menü um den Eintrag "Registrations". Nach erfolgtem Klick darauf sind sämtliche Anmeldungen in einer HTML-Tabelle auszugeben. Mögliches Ergebnis:
 
-![](./imgs/event-registration-backend-registrations.png)
+![](./imgs/event-registration-backend-registrations.PNG)
 
 Im Beispielsfall wurden bei der HTML-Tabelle im Backend folgenden *classes* verwendet: `<table class="wp-list-table widefat fixed striped">` Quelle: https://developer.wordpress.org/reference/classes/wp_list_table/
