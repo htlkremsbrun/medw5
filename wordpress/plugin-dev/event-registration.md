@@ -10,6 +10,7 @@ Ausgangslage bildet das in Übung 1 (siehe http://htl.boxtree.at/lehre/wp-conten
 - E-Mail
 
 Eine mögliche Darstellung im Frontend:
+
 ![](./imgs/event-registration-frontend-form.PNG)
 
 > Selbstverständlich kann diese an das eigene Look & Feel in UE1 angepasst werden. Achten Sie jedoch auf eine ansprechende Umsetzung, die einer Medientechnikern/eines Medientechnikers würdig ist!
