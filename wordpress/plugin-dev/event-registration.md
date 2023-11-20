@@ -11,7 +11,7 @@ Ausgangslage bildet das in Übung 1 (siehe http://htl.boxtree.at/lehre/wp-conten
 
 Eine mögliche Darstellung im Frontend:
 
-![](./imgs/event-registration-frontend-form.PNG)
+![](./imgs/event-registration-frontend-form.png)
 
 > Selbstverständlich kann diese an das eigene Look & Feel in UE1 angepasst werden. Achten Sie jedoch auf eine ansprechende Umsetzung, die einer Medientechnikern/eines Medientechnikers würdig ist!
 
@@ -69,7 +69,7 @@ function registration_form() {
 
 **>> Task 1**: Im ersten Schritt gilt es die getätigten Eingaben auf einfache Art und Weise auszugeben. Verwenden Sie hierbei die Funktion `sanitize_text_field` bei der Ausgabe. Ein mögliches Ergebnis zeigt nachfolgender Screenshot:  
 
-![](./imgs/event-registration-frontend-output.PNG)
+![](./imgs/event-registration-frontend-output.png)
 
 
 ## WordPress Database Class
@@ -131,6 +131,47 @@ Weiterführende Details liefert diese Quelle: https://codex.wordpress.org/Creati
 
 **>>Task 3:** Den vorläufig letzten Schritt stellt die Ausgabe der Anmeldung im Backend dar. Erweitern Sie das Menü um den Eintrag "Registrations". Nach erfolgtem Klick darauf sind sämtliche Anmeldungen in einer HTML-Tabelle auszugeben. Mögliches Ergebnis:
 
-![](./imgs/event-registration-backend-registrations.PNG)
+![](./imgs/event-registration-backend-registrations.png)
 
 Im Beispielsfall wurden bei der HTML-Tabelle im Backend folgenden *classes* verwendet: `<table class="wp-list-table widefat fixed striped">` Quelle: https://developer.wordpress.org/reference/classes/wp_list_table/
+
+## Backend-Erweiterung "Anmeldung Löschen"
+Erweitern Sie die Backend-Funktionalitäten des Plugins um die Funktion "Anmeldung löschen". Fügen Sie hierfür eine zusätzliche Spalte mit dem Titel "Action" hinzu, wie in der nachfolgenden Abbildung dargestellt. Das Löschen einer Anmeldung hat durch einen Klick auf den entsprechenden "Delete"-Link zu erfolgen.
+
+![](./imgs/event-registration-backend-registrations2.png)
+
+Ausgangspunkt für die Erweiterung ist die PHP-Funktion `htl_event_registration_page`. In dieser ist sämtlicher Code zu implementieren. Nachfolgender HTML-Codeauszug zeigt den Aufbau der zu erstellenden Links am Beispiel der Anmeldung mit der ID 6. 
+
+````html
+...
+<td><a href="?page=htl-registrations&action=delete&registration_id=6">Delete</a></td>
+...
+````
+
+Im Detail:
+
+- `page=htl-registrations`  Das Markup der HTML-Tabelle wird, wie bereits festgehalten, in der Funktion `htl_event_registration_page` generiert. Daher ist es notwendig, dass die Löschanforderung mit allen erforderlichen Informationen in dieser Funktion landet. Um dies zu erreichen, wird der Paramter *page* mit dem Wert *htl-registration* verwendet. Dies wurde in der Funktion `htl_event_registration_menu` bzw. `add_menu_page` (Quelle: https://developer.wordpress.org/reference/functions/add_menu_page/) so festgelegt. Beim Hinzufügen des Backend-Menüeintrages wurde außerdem die Callback-Funktion definiert, die dann in weiterer Folge ausgeführt wird, und das ist, Überraschung, die die Funktion `htl_event_registration_page`. Somit schließt sich der Kreis.
+
+````php
+function htl_event_registration_menu()
+{
+    add_menu_page(
+        'Registrations',
+        'Registrations',
+        'manage_options',
+        'htl-registrations', // <== Wert für den Parameter 'page'
+        'htl_event_registration_page' 
+    );
+}
+````
+- `action=delete`: Hierbei handelt es sich um einen Parameter, der angibt, welche Aktion auf der verlinkten Seite ausgeführt werden soll.
+- `registration_id:` Jener Parameter, der als Löschkriterium dient.
+
+Hinweise:
+- Übergeben Sie die `registration_id=6` an die Funktion `intval`, bevor Sie diese weiterverarbeiten (Quelle: https://www.php.net/manual/de/function.intval.php)
+- Das Löschen kann dann mittels `$wpdb->delete($table_name, array('id' => $registration_id), array('%d'));` erfolgen.
+
+
+**>>Task 4:** Setzen Sie die Backend-Funktionalitäten "Eintrag löschen" um. 
+
+**>>Task 5:** Lösen Sie den Hyperlink-Text "Delete" durch ein entsprechendes Icon (z.B. Mistkübel) ab.
