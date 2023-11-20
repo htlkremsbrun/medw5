@@ -11,7 +11,7 @@ Ausgangslage bildet das in Übung 1 (siehe http://htl.boxtree.at/lehre/wp-conten
 
 Eine mögliche Darstellung im Frontend:
 
-![](./imgs/event-registration-frontend-form.png)
+![](./imgs/event-registration-frontend-form.PNG)
 
 > Selbstverständlich kann diese an das eigene Look & Feel in UE1 angepasst werden. Achten Sie jedoch auf eine ansprechende Umsetzung, die einer Medientechnikern/eines Medientechnikers würdig ist!
 
@@ -69,7 +69,7 @@ function registration_form() {
 
 **>> Task 1**: Im ersten Schritt gilt es die getätigten Eingaben auf einfache Art und Weise auszugeben. Verwenden Sie hierbei die Funktion `sanitize_text_field` bei der Ausgabe. Ein mögliches Ergebnis zeigt nachfolgender Screenshot:  
 
-![](./imgs/event-registration-frontend-output.png)
+![](./imgs/event-registration-frontend-output.PNG)
 
 
 ## WordPress Database Class
@@ -131,14 +131,14 @@ Weiterführende Details liefert diese Quelle: https://codex.wordpress.org/Creati
 
 **>>Task 3:** Den vorläufig letzten Schritt stellt die Ausgabe der Anmeldung im Backend dar. Erweitern Sie das Menü um den Eintrag "Registrations". Nach erfolgtem Klick darauf sind sämtliche Anmeldungen in einer HTML-Tabelle auszugeben. Mögliches Ergebnis:
 
-![](./imgs/event-registration-backend-registrations.png)
+![](./imgs/event-registration-backend-registrations.PNG)
 
 Im Beispielsfall wurden bei der HTML-Tabelle im Backend folgenden *classes* verwendet: `<table class="wp-list-table widefat fixed striped">` Quelle: https://developer.wordpress.org/reference/classes/wp_list_table/
 
 ## Backend-Erweiterung "Anmeldung Löschen"
 Erweitern Sie die Backend-Funktionalitäten des Plugins um die Funktion "Anmeldung löschen". Fügen Sie hierfür eine zusätzliche Spalte mit dem Titel "Action" hinzu, wie in der nachfolgenden Abbildung dargestellt. Das Löschen einer Anmeldung hat durch einen Klick auf den entsprechenden "Delete"-Link zu erfolgen.
 
-![](./imgs/event-registration-backend-registrations2.png)
+![](./imgs/event-registration-backend-registrations2.PNG)
 
 Ausgangspunkt für die Erweiterung ist die PHP-Funktion `htl_event_registration_page`. In dieser ist sämtlicher Code zu implementieren. Nachfolgender HTML-Codeauszug zeigt den Aufbau der zu erstellenden Links am Beispiel der Anmeldung mit der ID 6. 
 
