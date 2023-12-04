@@ -228,3 +228,5 @@ add_action('admin_enqueue_scripts', 'load_custom_wp_admin_scripts');
 
 #### Anpassung der serverseitigen Bearbeitung der "Löschaufforderung" 
 Mit dem AJAX-Request werden - hoffentlich! - all jene Informationen an das serverseitige Plugin-Script übermittelt, die den eingehenden Request als "Löschaufforderung" identifizieren und in weiterer Folge die Durchführung des *DELETE*-Statements ermöglichen. Kurzum: Eine saubere Lösung wird 2 Parameter benötigen. Der serverseitige Implementierungsaufwand ist jedoch überschaubar.
+
+**>>Task 6:** Setzen Sie die Sicherheitsabfrage um.
