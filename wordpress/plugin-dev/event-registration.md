@@ -175,3 +175,56 @@ Hinweise:
 **>>Task 4:** Setzen Sie die Backend-Funktionalitäten "Eintrag löschen" um. 
 
 **>>Task 5:** Lösen Sie den Hyperlink-Text "Delete" durch ein entsprechendes Icon (z.B. Mistkübel) ab.
+
+## Backend-Erweiterung "Sicherheitsbfrage beim Löschen"
+Um die Backend-Funktionalitäten des Plugins "sicherer" zu gestalten, möchten wir eine Sicherheitsabfrage hinzufügen, bevor ein Eintrag elöscht wird. Statt den Eintrag sofort zu löschen, soll der Benutzer zunächst bestätigen, dass er den Eintrag wirklich löschen möchte.
+
+Im Prinzip braucht es drei Erweiterungsmaßnahmen:
+1. Implementierung des Bootstrap-Modal Dialogs
+2. JavaScript-Implementierung für *Click Event* und Ajax-Request
+3. Anpassung der serverseitigen Bearbeitung der "Löschaufforderung" 
+
+
+#### Bootstrap-Modal Dialogs
+Erweitern Sie die Löschoption um eine Sicherheitsabfrage mittels eines Bootstrap-Modal Dialogs (beispielhafte Umsetzung siehe nachfolgende Abbildung). Erst nach Betätigung des Buttons "Dauerhaft löschen" darf der Eintrag in der Datenbank entfernt werden. 
+
+![](./imgs/event-registration-backend-delete-dialog.PNG)
+
+Details bzgl. Verwendung eines Bootstrap-Modals sind dieser Quelle zu entnehmen: https://getbootstrap.com/docs/5.3/components/modal/#live-demo
+
+Um mit Bootstrap-Modals arbeiten zu können, braucht es neben der *bootstrap.min.js* die *bootstrap.min.css*. Diese gilt es im Plugin-File einzubinden. 
+
+`````php
+function load_bootstrap_in_admin() {
+    wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+    wp_enqueue_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array('jquery'), '4.3.1', true);
+}
+
+add_action('admin_enqueue_scripts', 'load_bootstrap_in_admin');
+``````
+
+Im Detail: 
+- `wp_enqueue_style`: Diese Funktion wird verwendet, um Stylesheets in WordPress zu laden. Hier wird die Bootstrap CSS-Datei von der angegebenen URL in den Admin-Bereich eingebunden.
+
+- `wp_enqueue_script`: Diese Funktion wird verwendet, um JavaScript-Dateien in WordPress zu laden. Hier wird die Bootstrap JavaScript-Datei von der angegebenen URL in den Admin-Bereich eingebunden. Das Array `array('jquery')` gibt an, dass Bootstrap von jQuery abhängt und sicherstellt, dass jQuery zuerst geladen wird. Die Versionsnummer '4.3.1' wird als Argument übergeben, und `true` legt fest, dass das Skript im Footer der Seite geladen wird.
+
+#### JavaScript-Implementierung für *Click Event* und Ajax-Request
+Genau genommen umfasst der Lösch-Prozess 2 Stufen:
+- Im ersten Schritt gilt es den Dialog zu öffnen. Hierzu stellt das Bootstrap-JS-API die Funktion `modal(...)` bereit (mögliches Anwendungsbeipsiel `$('#confirmationModal').modal('show');`, wenn die ID des Dialoges auf HTML-Ebene *confirmationModal* lautet). Auszuführen ist `modal('show')` nach einem Klick auf das Lösch-Icon. Das setzt einen entsprechenden *Click Event Listener*, der an das Icon gebunden ist, voraus. 
+
+- Der Lösch-Request wird durch einen Klick auf den Button "Dauerhaft löschen" abgesetzt. Demnach ist auch in diesem Fall ein entsprechender *Click Event Listerner* erforderlich, der beim Eintreten des Events (= Klick auf Button), die Callback-Funktion mit dem AJAX-Request ausführt. Für sämtlichen JS-Code empfiehlt sich die Erstellung einer separaten JS-Datei `app.js`, die sich im selben Verzeichnis, wie das Plugin-File, befinden kann. Diese ist Wordpress ebenfalls bekanntzumachen:
+
+```php
+function load_custom_wp_admin_scripts() {
+    wp_enqueue_script('custom_script', plugin_dir_url(__FILE__) . 'app.js', array('jquery'), '1.0', true);
+}
+
+add_action('admin_enqueue_scripts', 'load_custom_wp_admin_scripts');
+```
+
+> **Hinweis 1**: Selbstverständlich kann man beide *action hooks*, die einerseits Bootstrap-JS/CSS und andererseits *custom-JS* laden, in einem zusammenführen. Feel free!
+
+> **Hinweis 2**: Nachdem der AJAX-Request abgesetzt wurde, erfolgt serverseitig das Löschen des Eintrages. Zu diesem Zeitpunkt sind die Einträge in der HTML-Tabelle (im WP-Backend) und jene in der DB-Tabelle asynchron. Eine einfache, wenn auch nicht ganz so tolle Lösung, stellt der Aufruf von `window.location.href = '?page=htl-registrations';` in der *response callback* des AJAX-Requests dar. Dieser bewirkt, dass die aktuelle Seite nochmals geladen wird. Alternativ müsste man die entsprechende Zeile der HTML-Tabelle mittels JS entfernen, wenn das Löschen erfolgreich vonstatten gegangen ist.     
+
+#### Anpassung der serverseitigen Bearbeitung der "Löschaufforderung" 
+Mit dem AJAX-Request werden - hoffentlich! - all jene Informationen an das serverseitige Plugin-Script übermittelt, die den eingehenden Request als "Löschaufforderung" identifizieren und in weiterer Folge die Durchführung des *DELETE*-Statements ermöglichen. Kurzum: Eine saubere Lösung wird 2 Parameter benötigen. Der serverseitige Implementierungsaufwand ist jedoch überschaubar.
