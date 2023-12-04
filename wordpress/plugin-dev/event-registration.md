@@ -176,7 +176,7 @@ Hinweise:
 
 **>>Task 5:** Lösen Sie den Hyperlink-Text "Delete" durch ein entsprechendes Icon (z.B. Mistkübel) ab.
 
-## Backend-Erweiterung "Sicherheitsbfrage beim Löschen"
+## Backend-Erweiterung "Sicherheitasbfrage beim Löschen"
 Um die Backend-Funktionalitäten des Plugins "sicherer" zu gestalten, möchten wir eine Sicherheitsabfrage hinzufügen, bevor ein Eintrag elöscht wird. Statt den Eintrag sofort zu löschen, soll der Benutzer zunächst bestätigen, dass er den Eintrag wirklich löschen möchte.
 
 Im Prinzip braucht es drei Erweiterungsmaßnahmen:
