@@ -230,3 +230,14 @@ add_action('admin_enqueue_scripts', 'load_custom_wp_admin_scripts');
 Mit dem AJAX-Request werden - hoffentlich! - all jene Informationen an das serverseitige Plugin-Script übermittelt, die den eingehenden Request als "Löschaufforderung" identifizieren und in weiterer Folge die Durchführung des *DELETE*-Statements ermöglichen. Kurzum: Eine saubere Lösung wird 2 Parameter benötigen. Der serverseitige Implementierungsaufwand ist jedoch überschaubar.
 
 **>>Task 6:** Setzen Sie die Sicherheitsabfrage um.
+
+## Backend-Erweiterung "PDF Export"
+Es gilt das Wordpress-Plugin um eine PDF-Export-Funktion zu erweitern. Gundlage bildet hierbei die PDF-Library https://github.com/tecnickcom/TCPDF. Nachfolgender Screenshot zeigt ein mögliches Export-Ergebnis (mit einem einzigen Eintrag). 
+
+![](./imgs/event-registration-backend-pdf-export.PNG)
+
+**>>Task 7:** Setzen Sie die PDF-Export-Funktion um, indem Sie einen Button (mit dem Label "Anmeldungen exportieren") im Backend bereitstellen und die entsprechende PHP-Logik implementieren. Die Library ist im Ordner `tcpdf` abzulegen. Daraus resultiert folgende Ordner- und Dateistruktur im Plugin:
+
+├── tcpdf
+├── app.js   
+├── htl-event-registration.php
