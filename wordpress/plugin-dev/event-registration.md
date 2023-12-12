@@ -232,7 +232,7 @@ Mit dem AJAX-Request werden - hoffentlich! - all jene Informationen an das serve
 **>>Task 6:** Setzen Sie die Sicherheitsabfrage um.
 
 ## Backend-Erweiterung "PDF Export"
-Es gilt das Wordpress-Plugin um eine PDF-Export-Funktion zu erweitern. Gundlage bildet hierbei die PDF-Library https://github.com/tecnickcom/TCPDF. Nachfolgender Screenshot zeigt ein mögliches Export-Ergebnis (mit einem einzigen Eintrag). 
+Es gilt das Wordpress-Plugin um eine PDF-Export-Funktion zu erweitern. Gundlage bildet hierbei die PDF-Library https://github.com/tecnickcom/TCPDF. Alternativ die leichtgewichtigere Library FPDF (http://www.fpdf.org/) verwendet werden. Nachfolgender Screenshot zeigt ein mögliches Export-Ergebnis (mit einem einzigen Eintrag). 
 
 ![](./imgs/event-registration-backend-pdf-export.PNG)
 
