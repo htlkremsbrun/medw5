@@ -236,4 +236,4 @@ Es gilt das Wordpress-Plugin um eine PDF-Export-Funktion zu erweitern. Gundlage 
 
 ![](./imgs/event-registration-backend-pdf-export.PNG)
 
-**>>Task 7:** Setzen Sie die PDF-Export-Funktion um, indem Sie einen Button (mit dem Label "Anmeldungen exportieren") im Backend bereitstellen und die entsprechende PHP-Logik implementieren. Die Library ist im Ordner `tcpdf` abzulegen. 
+**>>Task 7:** Setzen Sie die PDF-Export-Funktion um, indem Sie einen Button (mit dem Label "Anmeldungen exportieren") im Backend bereitstellen und die entsprechende PHP-Logik implementieren. Die Library ist im Ordner `tcpdf` oder `fpdf` abzulegen. 
