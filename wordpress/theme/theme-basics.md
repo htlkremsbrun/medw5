@@ -1,4 +1,4 @@
-# Wordpress Theme Development
+# Wordpress Theme Development Basics
 
 Ziel ist die Entwicklung eines Wordpress (WP)-Themes. Grundlage liefert die Wordpress-Dokumentation (Quelle: https://codex.wordpress.org/Theme_Development).
 
@@ -18,8 +18,8 @@ das natürlich nicht zielführend. Um ein Mindestmaß an Struktur zu schaffen, g
 3) header.php
 4) footer.php
 
-Der Zweck der `header.php` bzw. `footer.php` ist naheliegend: Es geht um die Vermeidung von Redundanzen. Es ist bspw.
-nicht zielführend, *Header*-spezifischen Code n-mal zu duplizieren.
+Der Zweck der `header.php` bzw. `footer.php` ist naheliegend: Es geht um die Vermeidung von Redundanzen. Es wäre bspw.
+nicht sinnvoll, *Header*-spezifischen Code n-mal zu duplizieren.
 
 ### header.php
 
