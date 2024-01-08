@@ -51,14 +51,13 @@ Am Ende des Tages muss der Server valides HTML ausliefern. Das heißt, die einze
 und `footer.php`) gilt es an zentraler Stelle zusammenzufügen. Und genau das ist Aufgabe der `index.php`.
 
 Bei einem herkömmlichen PHP-Projekt würden man z.B. die Funktion `require_once()`verwenden, um Inhalte eines anderen
-PHP-Files einzubinden. Das ist bei WordPress etwas komfortabler, indem wir die entsprechenden Funktionen, auch *
-Template Tags* genannt, verwenden:
+PHP-Files einzubinden. Das ist bei WordPress etwas komfortabler, indem wir die entsprechenden Funktionen, auch *Template Tags* genannt, verwenden:
 
 - get_header()
 - get_footer()
 - get_template_part()
 
-Details sind in dieser Quelle https://codex.wordpress.org/Template_Tags zu entnehmen.
+Weiterführende Details sind in dieser Quelle https://codex.wordpress.org/Template_Tags zu entnehmen.
 
 Header und Footer in der `index.php` einbinden:
 
@@ -75,22 +74,21 @@ get_header(); ?>
 get_footer();
 ```
 
-> **Wichtig**: Um das Ergebnis im Browser zu betrachten, ist das neue Theme im Backend auszuwählen. Die `style.css` mit
-> dem entsprechenden Inhalt nicht vergessen. Eine Vorlage ist dieser Quelle https://developer.wordpress.org/themes/basics/main-stylesheet-style-css/ zu entnehmen.
+> **Wichtig**: Um das Ergebnis im Browser betrachten zu können, ist das neue Theme im Backend auszuwählen. Die `style.css` mit
+> dem entsprechenden Inhalt nicht vergessen. Eine entsprechende Vorlage stellt wiederum diese Quelle https://developer.wordpress.org/themes/basics/main-stylesheet-style-css/ bereit.
 > Im Browser sollte dann "Hello, world!" zu sehen sein.
 
 Der nächste Abschnitt behandelt die Verzahnung von Inhalten, die via Wordpress-Backend erstellt wurden, mit dem neuen
-Theme. Denn gegenwärtig ist der sog. *Content* (Inhalt, siehe "Hello, world!") hard-coded. Das ist definitiv kein
-Fortschritt. Hierzu hätten wir kein CMS benötigt. Außerdem werden einige Wordpress-Funktionen vorgestellt, die des
-Entwicklers Arbeit entscheidend vereinfachen.
+Theme. Denn gegenwärtig ist der sog. *Content* (Inhalt, siehe "Hello, world!") *hard-coded*, was definitiv kein
+Fortschritt wäre. Hierzu hätten wir kein CMS benötigt. Darüber hinaus werden einige Wordpress-Funktionen vorgestellt, die des
+Entwicklers Arbeit entscheidend vereinfachen (können).
 
 ## Static Page erstellen
 
-Im Backend die Page (Seite) *Home* erstellen, den Textblock "My first page" hinzufügen und unter *"Settings ->
-Readings"* als *A static page* deklarieren. Zur Information: Ã„nderungen in den *Settings* sind zu speichern. Nach Aufruf
+Im Backend die Page (dt. Seite) *Home* erstellen, den Textblock "My first page" hinzufügen und unter *"Settings ->
+Readings"* als *A static page* deklarieren. Zur Information: Änderungen in den *Settings* sind zu speichern. Nach Aufruf
 im Browser ist jedoch noch nichts zu sehen. Es braucht noch eine wesentliche Ergänzung in der `index.php`, und zwar um
-die sog.
-*Wordpress Loop*:
+die sog. *Wordpress Loop*:
 
 ```php
 <?php
@@ -110,14 +108,14 @@ if (have_posts()) : // check if the loop has returned any posts.
 
 else :
 
-    echo 'No Page Found'; // output an error message if there are no posts.
+    echo '<p>No page found!</p>'; // output an error message, if there are no posts.
 
 endif;
 
 get_footer();
 ```
 
-Nach nochmaligem Aufruf bzw. Refresh der Seite ist der Titel "Home" als auch der Textblock "My first page" zu sehen.
+Nach nochmaligem Aufruf bzw. Refresh der Seite sollten der Titel "Home" sowie der Textblock "My first page" zu sehen.
 
 ### Seite anpassen
 
