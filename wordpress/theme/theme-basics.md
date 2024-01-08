@@ -119,7 +119,7 @@ Nach nochmaligem Aufruf bzw. Refresh der Seite sollten der Titel "Home" sowie de
 
 ### Seite anpassen
 
-Unter "Admin Dashboard -> Appearance -> Customize -> Site Identity" kann man bspw. den *Title* oder das *Favicon*
+Unter "Admin Dashboard -> Appearance -> Customize -> Site Identity" kann man bspw. den *Title* (oder das *Favicon*)
 setzen. Im Theme kann dieser via `get_bloginfo( 'name' )` in der `header.php` abgerufen werden:
 
 ```html
@@ -137,15 +137,15 @@ Mit `get_bloginfo()` kann man weitere Werte (für z.B. *Charset* oder *Language*
 dokumentiert: https://developer.wordpress.org/reference/functions/get_bloginfo/. Grundlage bilden die Einstellungen im
 Backend (z.B. *Language*-Einstellungen siehe "Settings => General").
 
-Unser Theme wird so definitiv keine Designpreise gewinnen (bspw. fehlt die Navigation oder generell ein CSS), aber es
-ist ein guter Anfang.
+Unser Theme wird so definitiv keine Designpreise gewinnen (bspw. fehlt die Navigation oder generell CSS), aber es
+ist ein Anfang.
 
 ## Ressourcen einbinden
 
 Nahezu jedes Projekt benötigt 3rd Party Ressourcen wie Bootstrap. Um diese sauber einzubinden, empfiehlt sich
 die `functions.php`. Diese ist auf Ebene der anderen Files zu erstellen. Sollen Ressourcen vom "eigenen" Webserver
 ausgeliefert werden, gilt es diese in einem Unterverzeichnis abzulegen. Für CSS-Files wäre das bspw. *assets/css*, bei
-JS-Files *assets/js*. Da wir 3rd Party Ressource aus einem CDN laden, braucht es keine Kopien auf dem Server.
+JS-Files *assets/js*. Da wir 3rd Party Ressource aus einem CDN laden, braucht es keine Kopien auf dem Entwicklungs-Server.
 
 > By the way: *jQuery* muss nicht mehr eingebunden werden. Ist per *Default* erledigt.
 
@@ -160,7 +160,7 @@ Einträge in der `functions.php` des Themes:
 function my_custom_styles_enqueue() {
     wp_enqueue_style(
         'bootstrap',
-        'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css',
         array(),
         false,
         'all'
@@ -198,7 +198,7 @@ Frontend aufrufen. Aber nur dann, wenn man angemeldet ist.
 ### Action Hooks
 
 Im vorhergehenden Kapitel haben wir einen sog. *Action Hook* in der `functions.php` implementiert. Weiterführende
-Details liefert diese Quelle https://developer.wordpress.org/plugins/hooks/actions/. Kurzum: Mit *Action Hooks* kann man
+Details liefert diese Quelle https://developer.wordpress.org/plugins/hooks/actions/. Kurz um: Mit *Action Hooks* kann man
 die Wordpress-Kernfunktionalitäten einfach und schnell erweitern.
 
 ## Menü hinzufügen
@@ -213,7 +213,7 @@ register_nav_menus( array(
 ````
 
 Wie der Name der Funktion (siehe Mehrzahl) vermuten lässt, könnte man gleich mehrere Menüs im Theme mit dem
-Funktionsaufruf ermöglichen. Nachdem das Theme zumindest ein Menü unterstützt, können wir dieses in der `header.php`
+Funktionsaufruf ermöglichen. Nachdem das Theme zumindest ein Menü unterstützen soll, können wir dieses in der `header.php`
 einbinden. Hierzu stellt Wordpress die Funktion `wp_nav_menu()`, die ein Array als Argument entgegennimmt, bereit. Fügen
 Sie diese der `header.php` hinzu:
 
@@ -238,17 +238,17 @@ Sie diese der `header.php` hinzu:
 </header>
 ````
 
-Im Grunde ist das Menü bereits jetzt im Frontend zu sehen und funktionsfähig. Um dieses anzupassen, muss "das" Menü im
+Im Grunde ist das Menü bereits jetzt im Frontend zu sehen und funktionsfähig. Um dieses anzupassen, muss *das* Menü im
 Backend unter *Appearance > Menus* quasi erstellt und im Karteireiter *Manage Locations* der Eintrag "Main Menu"
 ausgewählt werden. Im Bereich "Menu structure" kann man Einträge hinzufügen oder löschen.
 
 ### Bootstrap-Menü anpassungen
 
 Möchte man das Menü, was aus mehreren Gründen ratsam ist, mit dem uns bekannten Bootstrap Look & Feel implementieren,
-braucht es ein wenig Hilfe in Form eines sog. "Walkers". Was ist nun der Zweck eines Walkers? Das Menü wird von
+braucht es ein wenig Hilfe in Form eines sog. "Walkers". Heißt was? Das Menü wird von
 Wordpress mit einigen Default-Klassenbezeichnern ausgeliefert. Das ist zwar für die Umsetzung eines eigenen CSS-Designs
 hilfreich, jedoch nicht bei einem Bootstrap-Menu, wo es definierten Klassenbezeichner braucht. Genau darum kümmert sich
-der Walker; der passt die Struktur und Klassenbezeichner in Nachhinein noch an, bevor das Markup (HTML) an den Client
+der Walker; dieser passt die Struktur und Klassenbezeichner in Nachhinein an, noch bevor das Markup (HTML) an den Client
 ausgeliefert wird.
 
 Es gibt verschiedenen Implementierungen in den Tiefen des Internets zu finden. Wir verwenden
@@ -330,7 +330,7 @@ erstellenden `sidebar.php`:
 ```
 
 Jetzt sollte die Sidebar im Viewport des Frontends zu sehen sein. Dass der Inhalt unter jenem der Loop steht, ist
-logisch, wir haben diese auch dort (ohne weiteres Markup) eingebunden. Was es braucht, sind entsprechenden Ã„nderungen in
+logisch, wir haben diese auch dort (ohne weiteres Markup) eingebunden. Was es braucht, sind entsprechenden Änderungen in
 der `index.php`, sodass ein 2-Spalten-Layout gegeben ist:
 
 ```php 
@@ -366,12 +366,12 @@ get_header(); ?>
 <?php get_footer(); ?>
 ```
 
-> Die Aufzählungspunkte bei der Sidebar müsste man noch entfernen.
+> Die Aufzählungspunkte in der Sidebar sind noch zu entfernen!
 
 ## Page Templates erstellen
 
-Erstellt man weitere Pages (z.B. Contact oder About), basieren diese auf dem 2-Spalten-Layout der `index.php`. Ist das
-nicht gewünscht, braucht es zusätzliche Page-Templates. Die Umsetzung mit Wordpress ist einfach.
+Erstellt man weitere Pages (z.B. *Contact* oder *About*), basieren diese auf dem 2-Spalten-Layout der `index.php`. Ist das
+nicht gewünscht, braucht es zusätzliche Page-Templates. Das ist mit Wordpress nicht all zu kompliziert.
 
 Erstellen Sie den Ordner "page-templates" im Theme-Ordner, und in diesem wiederum die Datei `single-column.php`. Damit
 das Template im Backend sichtbar ist, braucht es ein definierten Kommentar-Header in der `single-column.php`:
@@ -414,8 +414,9 @@ get_header(); ?>
 ````
 
 Im Prinzip ist das jener Code, den wir vor dem Umbau auf das 2-Spalten-Layout in der `index.php` hatten. Faktum ist: In
-jeder Template-Page ist mindestens die Loop zu implementieren, der Rest gemäß Aufgabenstellung. Abschließend stellt sich
-noch die Frage, wie man das Template verwenden kann. Hierfür klickt man auf die gewünschte Page im Backend. In der
+jeder Template-Page ist mindestens die Loop zu implementieren, der Rest gemäß Aufgabenstellung. 
+
+Abschließend stellt sich noch die Frage, wie man das Template verwenden kann. Hierfür klickt man auf die gewünschte Page im Backend. In der
 Sidebar ist dann im Bereich "Template" eine Dropdown-Box zu sehen, in welcher das neu erstellte Template selektiert
 werden kann. Details bzw. weiterführende Informationen bzgl. Page Templates können dieser
 Quelle https://developer.wordpress.org/themes/template-files-section/page-template-files/ entnommen werden. Erstellen
@@ -425,7 +426,7 @@ Sie eine weitere Page (z.B. About) und das neue Template zu testen.
 
 Die Umsetzung eines eigenen Themes ist gar nicht so schwer. Auch wenn das hier vorgestellte Beispiel alles andere als
 umfassend ist und den von Wordpress bereitgestellten Funktionsumfang bei weitem nicht ausschöpft, wird die prinzipielle
-Vorgehensweise deutlich. Das zählt!
+Vorgehensweise deutlich. Zumindest eine grobe Vorstellung sollte gegeben sein!
 
 ## Anhang
 
