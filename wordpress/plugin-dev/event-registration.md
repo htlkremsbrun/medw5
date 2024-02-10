@@ -2,7 +2,7 @@
 
 Ziel ist die Entwicklung eines Plugins, das einerseits die Anmeldung zu einer Veranstaltung ermöglicht und andererseits jene Backend-Funktionalitäten bereitstellt, die es zur Speicherung sowie Einsicht und Bearbeitung von Anmeldung braucht. Das Plugin ist als *Shortcode* zu implementieren. Schlussendlich soll es an beliebiger Stelle eingebunden werden könnnen.
 
-Ausgangslage bildet das in Übung 1 (siehe http://htl.boxtree.at/lehre/wp-content/uploads/MEDW5/MEDW5_WordpressProjectEcoTech-v0.2.pdf, Punkt 3 "Anmeldeseite") entwicklete Formular, das es in Form eines Plugins abzulösen gilt. Der Einfachheit halber werden die Anforderungen an das plugin-basierte Formular auf folgende **vier** Formularbestandteile konsolidiert:
+Ausgangslage bildet das in Übung 1 (siehe MEDW5_WordpressProjectEcoTech-v0.2.pdf, Punkt 3 "Anmeldeseite") entwicklete Formular, das es in Form eines Plugins abzulösen gilt. Der Einfachheit halber werden die Anforderungen an das plugin-basierte Formular auf folgende **vier** Formularbestandteile konsolidiert:
 
 - Anrede (für Frau, Herr, ...)
 - Vorname
