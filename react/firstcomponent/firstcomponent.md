@@ -313,3 +313,42 @@ Das Ergebnis im Browser sieht dann wie folgt aus:
 Für weiterführende Informationen über Bootstrap-Components wird auf diese Quelle verwiesen: https://react-bootstrap.github.io/docs/getting-started/introduction
 
 **>>Task 6**: Installieren Sie Boostrap und setzen Sie ein ansprechendes Layout bzw. Design um.
+
+## API-Zugriff mit Axios
+Obwohl React eine leistungsstarke Bibliothek zur Entwicklung von Benutzeroberflächen ist, bietet sie keine integrierten Möglichkeiten für den direkten Zugriff auf APIs. Für diese Aufgabe kommt *Axios* ins Spiel. Axios ist eine JavaScript-Bibliothek, die speziell für HTTP-Anfragen entwickelt wurde, um Daten von einem Webserver abzurufen.
+
+Eine Alternative ist *Fetch API* (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), die bereits in modernen Browsern integriert ist und eine native Möglichkeit bietet, HTTP-Anfragen zu senden und Daten zu empfangen. Im Vergleich zu Axios ist *Fetch API* jedoch etwas grundlegender und erfordert möglicherweise mehr manuelle Konfiguration.
+
+**>>Freiwilliger Task**: Ersetzen Sie das `books`-Array durch das Laden der Daten von http://htl.boxtree.at/medw5/api/books/. Zuvor ist noch Axios zu installieren, dar npm-Befehl lautet:
+
+````shel
+npm install axios
+````
+
+Der Import kann dann mit `import axios from 'axios'` erfolgen:
+
+````javascript
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'; 
+import './App.css';
+import Book from './components/Book';
+
+...
+// Diese Funktion hinzufügen und ggf. Variablen anapssen.    
+async function fetchBooks() {
+  try {
+    const response = await axios.get('http://htl.boxtree.at/medw5/api/books/'); // Anfrage an API senden
+    const data = response.data; // Daten aus der Antwort erhalten
+    setBooks(data); // Daten in den State setzen
+  } catch (error) {
+    console.error('Fehler:', error); // Fehlerbehandlung
+  }
+}
+
+// useEffect hinzufügen. 
+useEffect(() => {
+  //Diese Funktion wird nach jedem Rendern der Komponente ausgeführt.
+  fetchBooks();
+}, []);
+
+````
