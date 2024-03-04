@@ -1,5 +1,5 @@
 # React Native - einrichten der Arbeitsumgebung
-Die folgenden Ausführungen basieren auf der Quelle https://reactnative.dev/docs/environment-setup?guide=quickstart. Bei eventuellen Unklarheiten wird empfohlen, einen Blick in diese zu werfen. 
+Die folgenden Ausführungen basieren auf der Quelle https://reactnative.dev/docs/environment-setup?guide=quickstart. Bei eventuellen Unklarheiten wird empfohlen, einen Blick in diese zu werfen (siehe Tab "Expo Go Quickstart"). 
 
 Der einfachste Weg, um mit *React Native* zu arbeiten, ist *Expo Go* (https://expo.dev/). Expo Go (kurz Expo) stellt Wekzeugen für die Entwicklung, das Testen sowie für das Deployment von mobilen Anwendungen auf dem Endgerät bereit.
 
@@ -29,5 +29,4 @@ Installieren Sie die Expo-App auf ihrem Android- oder iOS-Smartphone (https://ex
 
 Unter Android verwenden Sie die Expo Go-App, um den QR-Code von Ihrem Terminal zu scannen und Ihr Projekt zu öffnen, während Sie unter iOS den integrierten QR-Code-Scanner der Standard-iOS-Kamera-App verwenden.
 
-Bei Problemen bitte die zugrunde liegende Quelle https://reactnative.dev/docs/environment-setup?guide=quickstart (siehe Tab "Expo Go Quickstart") konsultieren.
 
