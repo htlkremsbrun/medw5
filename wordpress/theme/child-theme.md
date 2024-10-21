@@ -1,20 +1,16 @@
-# Aufgabenstellung: Erstellung eines Child Themes in WordPress
+# Erstellung eines Child Themes in WordPress
 
-## Ziel der Aufgabe:
-Erstellen Sie für Ihr WordPress-Projekt ein **Child Theme** basierend auf einem freien Theme aus dem WordPress-Theme-Verzeichnis. Sie sollen das Design und die Funktionalität des Themes durch spezifische Anpassungen erweitern und anpassen.
+## Ziel
+Erstellen Sie ein **Child Theme** basierend auf einem freien Theme aus dem WordPress-Theme-Verzeichnis. Sie sollen das Design und die Funktionalität des Themes durch spezifische Anpassungen erweitern und anpassen.
 
-## Gruppenarbeit:
-Arbeiten Sie in Gruppen von jeweils 3 Schülern. Teilen Sie die Aufgaben innerhalb der Gruppe klar auf (z.B. einer für CSS/Design, einer für PHP/Code-Anpassung, einer für Testing/Dokumentation). Jeder Schüler sollte eine spezifische Aufgabe übernehmen und zur erfolgreichen Fertigstellung des Projekts beitragen.
-
-## Vorgaben:
-- **Dauer der Übung:** 3 Stunden
-- **Abgabe:** Laden Sie das fertige Child Theme (als ZIP-Datei) und eine kurze Dokumentation (PDF) auf Microsoft Teams hoch.
+## Abgabe
+Laden Sie das fertige Child Theme (als ZIP-Datei) auf Microsoft Teams (5 BHITM MEDW Gruppe) in der entsprechenden Aufgabe hoch. Geben Sie einer **readme.md** an, auf welchem Theme das Child Theme basiert.
 
 ---
 
-## Anforderungen an das Child Theme:
+## Anforderungen an das Child Theme
 
-### 1. Installation und Aktivierung des Parent Themes (20 Minuten)
+### 1. Installation und Aktivierung des Parent Themes
 
 - **Wählen Sie ein freies Theme** aus dem offiziellen WordPress-Theme-Verzeichnis. Dieses Theme wird als Parent Theme dienen. Empfohlene Themes könnten z.B. „Twenty Twenty-One“ oder „Astra“ sein.
 - **Schritte:**
@@ -22,7 +18,7 @@ Arbeiten Sie in Gruppen von jeweils 3 Schülern. Teilen Sie die Aufgaben innerha
    - Suchen Sie nach einem freien Theme, installieren und aktivieren Sie es.
    - Stellen Sie sicher, dass das Parent Theme korrekt läuft und dass die Standard-Startseite geladen wird.
 
-### 2. Erstellung und Konfiguration des Child Themes (30 Minuten)
+### 2. Erstellung und Konfiguration des Child Themes
 
 - **Erstellen Sie ein Child Theme**, das auf dem gewählten Parent Theme basiert. Dies geschieht durch das Anlegen eines neuen Ordners und das Hinzufügen von zwei essentiellen Dateien: `style.css` und `functions.php`.
   
@@ -46,7 +42,7 @@ Arbeiten Sie in Gruppen von jeweils 3 Schülern. Teilen Sie die Aufgaben innerha
      ```
    - Aktivieren Sie das Child Theme im WordPress-Backend unter **Design > Themes**.
 
-### 3. Designanpassungen im Child Theme (45 Minuten)
+### 3. Designanpassungen im Child Theme
 
 - **Nehmen Sie mindestens zwei individuelle CSS-Anpassungen** im Child Theme vor, um das Erscheinungsbild des Themes zu verändern. Diese Änderungen sollten die Gestaltung Ihres Projekts unterstützen und ein klar sichtbares Ergebnis auf der Website zeigen.
 
