@@ -63,7 +63,7 @@ Laden Sie das fertige Child Theme (als ZIP-Datei) auf Microsoft Teams (5 BHITM M
      }
      ```
 
-### 4. Anpassung der Startseite (45 Minuten)
+### 4. Anpassung der Startseite
 
 - **Passen Sie die Startseite an**, indem Sie eine **eigene Template-Datei für die Startseite** im Child Theme erstellen und Änderungen an der Layout-Struktur vornehmen. Zusätzlich sollten Sie einen neuen **Widget-Bereich** (z.B. in der Sidebar oder im Footer) integrieren, der über das WordPress-Backend befüllt werden kann.
 
@@ -103,7 +103,7 @@ Laden Sie das fertige Child Theme (als ZIP-Datei) auf Microsoft Teams (5 BHITM M
      }
      ```
 
-### 5. Erstellen einer individuellen Template-Datei (40 Minuten)
+### 5. Erstellen einer individuellen Template-Datei
 
 - **Erstellen Sie eine zusätzliche Template-Datei** für eine bestimmte Seite, z.B. eine Landing Page oder einen speziellen Seitentyp, der eine abweichende Struktur hat. Diese Template-Datei sollte von WordPress nutzbar sein, um eine individuelle Seite zu gestalten.
 
@@ -131,7 +131,7 @@ Laden Sie das fertige Child Theme (als ZIP-Datei) auf Microsoft Teams (5 BHITM M
 
    - Wählen Sie im WordPress-Backend unter **Seiten > Erstellen** bei der Erstellung einer neuen Seite dieses Template aus.
 
-### 6. Test und Feinschliff (30 Minuten)
+### 6. Test und Feinschliff 
 
 - **Testen Sie das Child Theme** gründlich, um sicherzustellen, dass alle Anpassungen korrekt funktionieren. Überprüfen Sie das Design, die Funktionalität und ob die Startseite und die individuell erstellten Seiten wie erwartet angezeigt werden.
 
@@ -140,20 +140,6 @@ Laden Sie das fertige Child Theme (als ZIP-Datei) auf Microsoft Teams (5 BHITM M
    - Testen Sie den neuen Widget-Bereich, indem Sie über **Design > Widgets** ein Widget hinzufügen und sicherstellen, dass es korrekt auf der Startseite erscheint.
    - Prüfen Sie, ob die Template-Datei für die spezielle Seite korrekt ausgewählt und angezeigt wird.
 
-### 7. Dokumentation (20 Minuten)
-
-- **Erstellen Sie eine kurze Dokumentation** (max. 1 Seite im PDF-Format), die folgende Punkte erklärt:
-   - Welches Parent Theme wurde verwendet?
-   - Welche Anpassungen wurden im Child Theme vorgenommen (Design, Funktionalität)?
-   - Welche Schwierigkeiten oder Herausforderungen sind aufgetreten und wie wurden sie gelöst?
-
----
-
-## Abgabe:
-- **Child Theme als ZIP-Datei**: Laden Sie das Child Theme (den gesamten Ordner) als ZIP-Datei hoch.
-- **Dokumentation als PDF**: Laden Sie eine PDF-Datei mit der Dokumentation auf Microsoft Teams hoch.
-- Nennen Sie alle Gruppenmitglieder in der Dokumentation.
-
 ---
 
 ## Bewertungskriterien:
@@ -161,5 +147,4 @@ Laden Sie das fertige Child Theme (als ZIP-Datei) auf Microsoft Teams (5 BHITM M
 - Umsetzung der Design- und Funktionsanpassungen (z.B. Widget-Bereiche, CSS-Änderungen)
 - Saubere und lesbare Codierung (CSS/HTML/PHP)
 - Funktionalität des Child Themes im WordPress-System (fehlerfreie Anzeige und Verwendung)
-- Vollständigkeit und Klarheit der Dokumentation
 
