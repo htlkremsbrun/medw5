@@ -4,7 +4,7 @@
 Erstellen Sie ein **Child Theme** basierend auf einem freien Theme aus dem WordPress-Theme-Verzeichnis. Sie sollen das Design und die Funktionalität des Themes durch spezifische Anpassungen erweitern und anpassen.
 
 ## Abgabe
-Laden Sie das fertige Child Theme (als ZIP-Datei) auf Microsoft Teams (5 BHITM MEDW Gruppe) in der entsprechenden Aufgabe hoch. Geben Sie einer **readme.md** an, auf welchem Theme das Child Theme basiert.
+Abgabe via Repo. Geben Sie einer **readme.md** an, auf welchem Theme das Child Theme basiert.
 
 ---
 
@@ -140,11 +140,4 @@ Laden Sie das fertige Child Theme (als ZIP-Datei) auf Microsoft Teams (5 BHITM M
    - Testen Sie den neuen Widget-Bereich, indem Sie über **Design > Widgets** ein Widget hinzufügen und sicherstellen, dass es korrekt auf der Startseite erscheint.
    - Prüfen Sie, ob die Template-Datei für die spezielle Seite korrekt ausgewählt und angezeigt wird.
 
----
-
-## Bewertungskriterien:
-- Korrekte Erstellung und Einbindung des Child Themes
-- Umsetzung der Design- und Funktionsanpassungen (z.B. Widget-Bereiche, CSS-Änderungen)
-- Saubere und lesbare Codierung (CSS/HTML/PHP)
-- Funktionalität des Child Themes im WordPress-System (fehlerfreie Anzeige und Verwendung)
 
