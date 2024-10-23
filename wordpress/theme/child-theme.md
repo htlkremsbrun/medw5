@@ -4,7 +4,7 @@
 Erstellen Sie ein **Child Theme** basierend auf einem freien Theme aus dem WordPress-Theme-Verzeichnis. Sie sollen das Design und die Funktionalität des Themes durch spezifische Anpassungen erweitern und anpassen.
 
 ## Abgabe
-Abgabe via Repo. Geben Sie einer **readme.md** an, auf welchem Theme das Child Theme basiert.
+Abgabe via Repo. Geben Sie in einer **readme.md** an, auf welchem Theme das Child Theme basiert.
 
 ---
 
