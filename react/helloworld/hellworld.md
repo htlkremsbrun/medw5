@@ -32,14 +32,16 @@ React kann man prinzipiell auch ohne Node.js verwenden, indem man die Bibliothek
 In der Praxis wird jedoch empfohlen, Node.js und npm zu verwenden, da sie die Entwicklung und Bereitstellung von React-Anwendungen erheblich vereinfachen.
 
 ## Installation von Node.js
-Falls Node.js noch nicht installiert ist, kann das entsprechende Paket von https://nodejs.org/en/download geladen werden. Mittels Kommandozeile kann man überprüfen, ob Node.js (mit welcher Version) installiert ist:
+Mittels Kommandozeile kann man überprüfen, ob Node.js (mit welcher Version) installiert ist:
 ````shell
 node -v
 ````
+Falls Node.js noch nicht installiert ist, kann das SW-Paket von https://nodejs.org/en/download geladen werden. 
+
 Node.js ist eine Open-Source-JavaScript-Laufzeitumgebung, die es ermöglicht, JavaScript-Code außerhalb eines Webbrowsers auszuführen. Es basiert auf der V8-JavaScript-Engine von Google Chrome und ermöglicht die Ausführung von JavaScript auf dem Server. Die Rolle von Node.js bei React besteht darin, eine Umgebung bereitzustellen, in der React-Anwendungen entwickelt, ausgeführt und bereitgestellt werden können.
 
 ## React-Projekt erstellen
-Um die Komplexität zu reduzieren, verwenden wir React **ohne** weiteres Framework wie Next.js. Das macht's es dann doch ein wenig einfacher für uns beim Kennenlernen von React. 
+Um die Komplexität zu reduzieren, verwenden wir React **ohne** weiteres Framework wie Next.js. Das macht es dann doch ein wenig einfacher für uns beim Kennenlernen von React. 
 
 Navigieren Sie in einen beliebigen Ordner, in welchem das React-Projekt erstellt werden soll. Das muss nicht zwangsläufig ein Unterordner der Apache-htdocs-Ordner sein.
 
