@@ -6,7 +6,8 @@ Erstelle ein neues Laravel-Proejkt mit Composer:
 
 >composer create-project --prefer-dist laravel/laravel rest-api-sanctum
 
-**Hinweis**: Ziel des Projekts ist es, eine grundlegende Benutzer-Authentifizierung innerhalb einer Laravel-Anwendung zu implementieren. Konkret umfasst das Projekt ausschließlich die Funktionen zur Registrierung, Anmeldung und Abmeldung von Benutzern. 
+### Zielsetzung
+Ziel des Projekts ist es, eine grundlegende Benutzer-Authentifizierung innerhalb einer Laravel-Anwendung zu implementieren. Konkret umfasst das Projekt ausschließlich die Funktionen zur Registrierung, Anmeldung und Abmeldung von Benutzern. 
 
 Im **Registrierungsprozess** wird ein neuer Benutzer angelegt, wobei die Eingabedaten validiert und das Passwort sicher gespeichert werden. 
 
