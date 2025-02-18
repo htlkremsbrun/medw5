@@ -40,4 +40,4 @@ Auch hier lässt sich der Aufwand reduzieren, indem man die Bücher initial via 
       .catch(err => console.error("Fehler:", err));
   }, []);
 ````
-Bei erfolgreicher Authentifizierung beim API-Zugriff retourniert das API die Bücher. Wenn nicht, erfolgt die Ausgabe der Fehlermeldung.
+Bei erfolgreicher Authentifizierung des API-Zugriffs retourniert das API die Bücher. Wenn nicht, erfolgt die Ausgabe der Fehlermeldung.
