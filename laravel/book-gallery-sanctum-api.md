@@ -21,3 +21,20 @@ Grundlage bildet dieses Tutorial https://medium.com/@abdelra7manabdullah/api-aut
 >php artisan install:api
 
 Danach mit `php artisan migrate` fortfahren. Die Sanctum Konfiguration muss nicht unbedingt erstellt werden.
+
+### API-Test
+Zum Testen kann entweder *Postman* (Browser-Plugin) oder der *HTTP Client* von Webstorm (siehe Tool > HTTP Client) verwendent werden. Führen Sie die Requests wie folgt durch:
+
+### Benutzer registrieren
+Aufruf der Rout/des Endpunktes: `http://localhost:8000/api/register`
+Request im Detail:
+````bash
+POST http://localhost:8000/api/register
+Content-Type: application/json
+
+{
+  "name": "Vorlauer Jan",
+  "email": "j.vorlauer@htlkrems.at",
+  "password": "jan"
+}
+````
