@@ -138,10 +138,11 @@ Im zweiten Schritt stellen wir den Auth-Token bereit.
 ````bash
 POST http://127.0.0.1:8000/api/logout
 Accept: application/json
+
 Authorization: Bearer 9|LdAXUkVPx8twr4yT64cc8ncZl8vQ2ksG0xSebzNd3e81aee2
 ````
 In diesem Fall sollte die Abmeldung funktionieren (siehe *logged out*-Antwort).
-
+````bash
 HTTP/1.1 200 OK
 Host: 127.0.0.1:8000
 Connection: close
@@ -154,6 +155,6 @@ Access-Control-Allow-Origin: *
 {
   "message": "logged out"
 }
-````
-Response code: 200 (OK); Time: 248ms (248 ms); Content length: 24 bytes (24 B)
 
+Response code: 200 (OK); Time: 248ms (248 ms); Content length: 24 bytes (24 B)
+````
