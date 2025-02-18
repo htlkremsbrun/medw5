@@ -134,12 +134,12 @@ Access-Control-Allow-Origin: *
 
 Response code: 401 (Unauthorized); Time: 272ms (272 ms); Content length: 30 bytes (30 B)
 ````
-Im zweiten Schritt stellen wir den Auth-Token bereit. 
+Im zweiten Schritt stellen wir den Auth-Token bereit. Das ist jener Token, den wir bei der Anmeldung (siehe oben) erhalten haben.
 ````bash
 POST http://127.0.0.1:8000/api/logout
 Accept: application/json
 
-Authorization: Bearer 9|LdAXUkVPx8twr4yT64cc8ncZl8vQ2ksG0xSebzNd3e81aee2
+Authorization: Bearer 6|6u0J9qOO9HKehYw5012jG7kc11OUHM66tvgoYNKrb19c4a36
 ````
 In diesem Fall sollte die Abmeldung funktionieren (siehe *logged out*-Antwort).
 ````bash
