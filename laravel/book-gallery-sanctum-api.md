@@ -147,6 +147,6 @@ Access-Control-Allow-Origin: *
 {
   "message": "logged out"
 }
-
+````
 Response code: 200 (OK); Time: 248ms (248 ms); Content length: 24 bytes (24 B)
 
