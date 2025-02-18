@@ -27,6 +27,7 @@ Zum Testen kann entweder *Postman* (Browser-Plugin) oder der *HTTP Client* von W
 
 ### Benutzer registrieren
 Aufruf der Route/des Endpunktes: `http://localhost:8000/api/register`
+
 Request im Detail:
 ````bash
 POST http://localhost:8000/api/register
@@ -53,7 +54,6 @@ Access-Control-Allow-Origin: *
   "message": "User Created "
 }
 Response file saved.
-> 2025-02-18T142903.200.json
 
 Response code: 200 (OK); Time: 667ms (667 ms); Content length: 27 bytes (27 B)
 ````
@@ -79,6 +79,7 @@ Wobei die erhaltene *Message* von der tatsächlichen Implementierung abhängt. I
 ### Benutzer anmelden
 Durch das Anmelden (oder Einloggen) erhalten wir den Auth-Token vom API. Es braucht  
 Aufruf der Route/des Endpunktes: `http://localhost:8000/api/login`
+
 Request im Detail:
 ````bash
 POST http://localhost:8000/api/login
@@ -105,3 +106,47 @@ Access-Control-Allow-Origin: *
 }
 ````
 Sollten die Anmeldedaten nicht stimmen, erfolgt eine entsprechende Fehlermeldung - entsprechende Implementierung (vom Schüler/von der Schülerin) vorausgesetzt!
+
+### Benutzer abmelden
+Im ersten Schritt testen wir die Abmeldung ohne bereitgestellten Auth-Token. In diesem Fall erwarten wir eine Fehlermeldung, da der Zugriff auf diese API ausschließlich mit einem gültigen Auth-Token möglich sein sollte.
+
+Aufruf der Route/des Endpunktes: `http://localhost:8000/api/logout`
+
+Request im Detail (ohne Token):
+````bash
+POST http://127.0.0.1:8000/api/logout
+Accept: application/json
+````
+Eine Fehlermeldung (401) als Antwort ist in diesem Fall korrekt und erwünscht:
+````bash
+HTTP/1.1 401 Unauthorized
+Host: 127.0.0.1:8000
+Connection: close
+X-Powered-By: PHP/8.3.10
+Cache-Control: no-cache, private
+Date: Tue, 18 Feb 2025 13:43:51 GMT
+Content-Type: application/json
+Access-Control-Allow-Origin: *
+
+{
+  "message": "Unauthenticated."
+}
+
+Response code: 401 (Unauthorized); Time: 272ms (272 ms); Content length: 30 bytes (30 B)
+````
+Im zweiten Schritt stellen wir den Auth-Token bereit. In diesem Fall sollte die Abmeldung funktionieren (siehe *logged out*-Antwort).
+HTTP/1.1 200 OK
+Host: 127.0.0.1:8000
+Connection: close
+X-Powered-By: PHP/8.3.10
+Cache-Control: no-cache, private
+Date: Tue, 18 Feb 2025 13:51:26 GMT
+Content-Type: application/json
+Access-Control-Allow-Origin: *
+
+{
+  "message": "logged out"
+}
+
+Response code: 200 (OK); Time: 248ms (248 ms); Content length: 24 bytes (24 B)
+
