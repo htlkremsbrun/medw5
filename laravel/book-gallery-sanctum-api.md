@@ -158,3 +158,48 @@ Access-Control-Allow-Origin: *
 
 Response code: 200 (OK); Time: 248ms (248 ms); Content length: 24 bytes (24 B)
 ````
+## Ablauf des Logouts mit Laravel Sanctum
+
+Laravel Sanctum ermöglicht eine einfache Token-basierte Authentifizierung und bietet eine sichere Methode zum Abmelden (Logout). Hier ist der typische Ablauf für einen Logout-Vorgang beschrieben:
+
+---
+
+### **Ablauf des Logouts mit Sanctum:**
+
+1. **Client schickt Anfrage:**  
+   Der Client sendet einen `POST`-Request an die `logout`-Route und überträgt den `Authorization`-Header mit dem Bearer-Token:  
+   `Authorization: Bearer <token>`
+
+2. **Token-Extraktion:**  
+   Laravel Sanctum extrahiert den Klartext-Token aus dem Header.
+
+3. **Hash und Suche in der Datenbank:**  
+   - Sanctum hasht den extrahierten Token mit derselben Hashing-Methode, die bei der Erstellung des Tokens verwendet wurde.
+   - Sanctum sucht in der `personal_access_tokens`-Tabelle nach einem Datensatz mit dem passenden gehashten Token.
+
+4. **Überprüfung:**  
+   - Wenn ein gültiger Eintrag gefunden wird und der Token zu einem aktiven Benutzer gehört, ist die Authentifizierung erfolgreich.
+   - Der Benutzer wird basierend auf dem Token authentifiziert.
+
+5. **Token-Löschung:**  
+   Wird die `logout`-Methode aufgerufen, löscht Sanctum den gefundenen Token (oder alle Tokens des Benutzers) aus der `personal_access_tokens`-Tabelle.
+
+6. **Antwort an den Client:**  
+   - Bei erfolgreicher Löschung gibt das API üblicherweise eine Erfolgsmeldung (z. B. `200 OK` mit "Logged out successfully") zurück.  
+   - Wenn der Token nicht gefunden wird oder ungültig ist, wird eine Fehlermeldung zurückgegeben (z. B. `401 Unauthorized`).
+
+---
+
+### **Code-Beispiel für Logout-Methode:**
+
+Hier ist ein Beispiel einer `logout`-Methode in einem Laravel-Controller:
+
+```php
+public function logout(Request $request)
+{
+    // Löscht alle Tokens des authentifizierten Benutzers
+    auth()->user()->tokens()->delete();
+
+    return response()->json(["message" => "Logged out successfully"]);
+}
+```
