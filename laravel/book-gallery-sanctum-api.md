@@ -162,8 +162,6 @@ Response code: 200 (OK); Time: 248ms (248 ms); Content length: 24 bytes (24 B)
 
 Laravel Sanctum ermöglicht eine einfache Token-basierte Authentifizierung und bietet eine sichere Methode zum Abmelden (Logout). Hier ist der typische Ablauf für einen Logout-Vorgang beschrieben:
 
----
-
 ### **Ablauf des Logouts mit Sanctum:**
 
 1. **Client schickt Anfrage:**  
@@ -187,8 +185,6 @@ Laravel Sanctum ermöglicht eine einfache Token-basierte Authentifizierung und b
 6. **Antwort an den Client:**  
    - Bei erfolgreicher Löschung gibt das API üblicherweise eine Erfolgsmeldung (z. B. `200 OK` mit "Logged out successfully") zurück.  
    - Wenn der Token nicht gefunden wird oder ungültig ist, wird eine Fehlermeldung zurückgegeben (z. B. `401 Unauthorized`).
-
----
 
 ### **Code-Beispiel für Logout-Methode:**
 
